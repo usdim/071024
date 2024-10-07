@@ -5,9 +5,18 @@ public class Main {
         a.read();
         b.sleep();
       }
+    public static void Slp (Student student){
+        System.out.println();
+        student.read();
+
+
+
+    };
+
 
 
     public static void main(String[] args) {
+
 
 
         Book book1 = new Book();
@@ -32,6 +41,7 @@ public class Main {
 
         student3.sleep();
         student4.read();
+        Slp(student1);
 
 
     }
