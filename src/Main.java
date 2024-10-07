@@ -1,9 +1,12 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void Reading (Readeble a ){
+    public static void Reading (Readeble a, Sleelaple b ){
         a.read();
-    }
+        b.sleep();
+      }
+
+
     public static void main(String[] args) {
 
 
@@ -16,16 +19,16 @@ public class Main {
         Prinatable book2 = new Book(); // здесь создали интерфейс
         book2.print();
 
-        Student student1 = new Student();
+        Student student1 = new Student("вася",10,"хим");
         System.out.println(student1.SPEEDREADING);
-        Student student2 = new Student();
+        Student student2 = new Student("Петя",12,"физ");
         System.out.println(student2.TMIESLEEP);
         student1.read();
         student2.sleep();
         student1.prn();
 
-        Sleelaple student3 = new Student(); // студент типа интерфейса Sleepable
-        Readeble student4 = new Student();
+        Sleelaple student3 = new Student("Петя",12,"физ"); // студент типа интерфейса Sleepable
+        Readeble student4 = new Student("Петя",12,"физ");
 
         student3.sleep();
         student4.read();
@@ -64,12 +67,11 @@ class Journal implements Prinatable {
 
 class Student implements Readeble, Sleelaple {
 
-
     String name;
     int age;
     String faculty;
 
-    public void Student (String name, int age, String faculty) {
+    public Student (String name, int age, String faculty) {
         this.name = name;
         this.age = age;
         this.faculty = faculty;
@@ -78,7 +80,7 @@ class Student implements Readeble, Sleelaple {
 
     @Override
     public void read() {
-        System.out.println("Стундент 1 читает про джаву ");
+        System.out.println("Стундент 1 читает про джаву "+name+age+faculty);
     }
 
     @Override
